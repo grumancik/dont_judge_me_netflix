@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Options - Voice Actions for Chrome</title>
+		<link rel="stylesheet" type="text/css" href="styles/options.css" />
+		<link rel="stylesheet" type="text/css" href="styles/options-widgets.css" />
+		<script type="text/javascript" src="scripts/defaults.js"></script>
+		<script type="text/javascript" src="scripts/options-setup.js"></script>
+		<script type="text/javascript" src="scripts/options.js"></script>
+		
+		<!-- This allows speech recognition to be performed when this tab is open. -->
+		<script type="text/javascript" src="scripts/speech_recognition.js"></script>
+	</head>
+	<body>
+		<nav class="sideBar">
+			<h1>Chrome</h1>
+			<ul>
+				<li><a href="chrome://history" target="_blank">History</a></li>
+				<li>
+					<a href="chrome://extensions">Extensions</a>
+					<ul>
+						<li>Voice Actions for Chrome</li>
+					</ul>
+				</li>
+				<li><a href="chrome://settings">Settings</a></li>
+				<li><a href="chrome://help">Help</a></li>
+			</ul>
+		</nav>
+		<header>
+			<h1>Voice Actions for Chrome (beta)</h1>
+		</header>
+		<section>
+			<h3>Help</h3>
+			<p>Try these different types of actions:</p>
+			<ul id="actionExamples">
+				<li>
+					<img src="images/images.png" alt="Pictures" />
+					<p>&ldquo;<b>Pictures of</b> cats&rdquo;</p>
+				</li>
+				<li>
+					<img src="images/videos.png" alt="Videos" />
+					<p>&ldquo;<b>Videos of</b> CES&rdquo;</p>
+				<li>
+					<img src="images/map.png" alt="Map" />
+					<p>&ldquo;<b>Map of</b> Washington, DC.&rdquo;</p>
+				</li>
+				<li>
+					<img src="images/directions.png" alt="Directions" />
+					<p>&ldquo;<b>Directions to</b> The White House.&rdquo;</p>
+				</li>
+				<li>
+					<img src="images/web.png" alt="Website" />
+					<p>&ldquo;<b>Go to</b> Wikipedia.&rdquo;</p>
+				</li>
+				<li>
+					<img src="images/music.png" alt="Music" />
+					<p>&ldquo;<b>Listen to</b> Deadmau5&rdquo;</p>
+				</li>
+				<li>
+					<img src="images/calc.png" alt="Calculate" />
+					<p>&ldquo;<b>Calculate</b> 1 + 1&rdquo;</p>
+				</li>
+				<li>
+					<img src="images/tabs.png" alt="Tabs" />
+					<p>&ldquo;<b>Switch to</b> [tab]&rdquo;</p>
+				</li>
+				<li>
+					<img src="images/search.png" alt="Search" />
+					<p>Or just search for anything</p>
+				</li>
+			</ul>
+		</section>
+		<section>
+			<h3>Services</h3>
+			<p>Search</p>
+			<select id="searchSetting" disabled="disabled">
+				<option value="ask">Ask</option>
+				<option value="bing">Bing</option>
+				<option value="google">Google (default)</option>
+				<option value="yahoo">Yahoo</option>
+			</select>
+			<p>Image Search</p>
+			<select id="imagesSetting" disabled="disabled">
+				<option value="ask">Ask</option>
+				<option value="bing">Bing</option>
+				<option value="flickr">Flickr</option>
+				<option value="google">Google (default)</option>
+				<option value="imgur">imgur</option>
+				<option value="yahoo">Yahoo</option>
+			</select>
+			<p>Video Search</p>
+			<select id="videosSetting" disabled="disabled">
+				<option value="ask">Ask</option>
+				<option value="bing">Bing</option>
+				<option value="dailymotion">Dailymotion</option>
+				<option value="google">Google</option>
+				<option value="hulu">Hulu</option>
+				<option value="metacafe">Metacafe</option>
+				<option value="netflix">Netflix</option>
+				<option value="twitch">Twitch</option>
+				<option value="vimeo">Vimeo</option>
+				<option value="youtube">YouTube (default)</option>
+			</select>
+			<p>Maps</p>
+			<select id="mapSetting" disabled="disabled">
+				<option value="bing">Bing</option>
+				<option value="google">Google (default)</option>
+				<option value="yahoo">Yahoo</option>
+			</select>
+			<p>Directions</p>
+			<select id="directionsSetting" disabled="disabled">
+				<option value="google">Google (default)</option>
+			</select>
+			<p>Music</p>
+			<select id="musicSetting" disabled="disabled">
+				<option value="amazon">Amazon Cloud Player</option>
+				<option value="google">Google Play Music (default)</option>
+				<option value="grooveshark">Grooveshark</option>
+				<option value="lastfm">Last.fm</option>
+				<option value="pandora">Pandora</option>
+				<option value="soundcloud">SoundCloud</option>
+				<option value="spotify">Spotify</option>
+				<option value="youtube">YouTube</option>
+			</select>
+			<p>Calculator</p>
+			<select id="calcSetting" disabled="disabled">
+				<option value="google">Google</option>
+				<option value="wolframalpha">Wolfram|Alpha (default)</option>
+			</select>
+			<p>App/Site Launcher</p>
+			<select id="launchSetting" disabled="disabled">
+				<option value="chrome">Chrome apps</option>
+				<option value="google">I'm Feeling Lucky (default)</option>
+				<option value="smart">Try Chrome apps, then try I'm Feeling Lucky</option>
+			</select>
+		</section>
+		<section>
+			<h3>Other options</h3>
+			<p>Before performing an action, wait...</p>
+			<select id="actionDelayTimeSetting" disabled="disabled">
+				<option value="1050">1 second</option>
+				<option value="2050">2 seconds (default)</option>
+				<option value="3050">3 seconds</option>
+			</select>
+			<p>Open pages in...</p>
+			<select id="openLocationSetting" disabled="disabled">
+				<option value="current">Current tab, always</option>
+				<option value="new">New tab, always</option>
+				<option value="smart">New tab, except on the new tab page (default)</option>
+			</select>
+			<p style="padding: 7px 0;">
+				<label for="soundsSetting">
+					<input type="checkbox" id="soundsSetting" disabled="disabled" />
+					Play sound effects
+				</label>
+			</p>
+		</section>
+		<section>
+			<h3>Reset</h3>
+			<p>Resetting your Voice Actions options to the defaults cannot be undone!</p>
+			<button id="resetButton" disabled="disabled">Reset all options</button>
+		</section>
+		<section>
+			<h3>About</h3>
+			<p id="versionNumber"></p>
+			<p>Voice Actions for Chrome was created by <a href="http://zmyaro.com" target="_blank">Zachary Yaro</a>.</p>
+			<p>You can follow <a href="http://gplus.to/voiceactions" target="_blank">Voice Actions for Chrome on Google+</a>.</p>
+			<p>The source code is available <a href="https://github.com/zmyaro/chrome-voice-actions" target="_blank">on GitHub</a>.</p>
+			<br />
+			<p>This extension is still in beta.  Your mileage may vary.</p>
+		</section>
+	</body>
+</html>
